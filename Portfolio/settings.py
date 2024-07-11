@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'sendemail',
 ]
 
 MIDDLEWARE = [
@@ -117,6 +118,11 @@ USE_TZ = True
 
 MEDIA_ROOT = BASE_DIR / "uploads/"
 MEDIA_URL = "media/"
+
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
+DEFAULT_FROM_EMAIL = "jasonqinedu@gmail.com"
+NOTIFY_EMAIL = "jasonqinedu@gmail.com"
+
 
 
 # Static files (CSS, JavaScript, Images)
