@@ -1,21 +1,128 @@
-/* Reset default margin and padding for all elements */
+/* General Styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Body styling */
 body {
     font-family: 'Arial', sans-serif;
-    background-color: #000; /* Dark background */
+    background-color: #000; /* Black background */
     color: #fff; /* White text */
-    line-height: 1.6;
+    overflow-x: hidden; /* Prevent horizontal scroll */
 }
 
-/* Navbar styling */
+/* Home Page Styles */
+.home-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Full viewport height */
+    background: linear-gradient(to bottom, #000, #333);
+    padding: 20px;
+}
+
+.home-content {
+    text-align: center;
+    max-width: 800px;
+}
+
+.home-content h1 {
+    font-size: 48px;
+    color: #007bff; /* Primary color */
+}
+
+.home-content h2 {
+    font-size: 36px;
+    color: #ffffff;
+    margin-top: 20px;
+}
+
+.home-content p {
+    font-size: 18px;
+    color: #cccccc;
+    margin-top: 10px;
+}
+
+.about-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 30px;
+}
+
+.about-image {
+    margin-top: 20px;
+}
+
+.about-image img {
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+}
+
+/* Projects Page Styles */
+.projects-container {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh; /* Full viewport height */
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+.project-section {
+    position: relative;
+    height: 100vh; /* Full viewport height */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+    background-color: rgba(0, 0, 0, 0.5); /* Fallback color */
+    color: #fff;
+    text-align: center;
+    padding: 20px;
+}
+
+.project-content {
+    background: rgba(0, 0, 0, 0.7); /* Semi-transparent overlay */
+    color: #fff;
+    width: 80%;
+    max-width: 600px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+.project-content h2 {
+    margin-bottom: 10px;
+    font-size: 36px;
+}
+
+.project-content p {
+    margin-bottom: 10px;
+    font-size: 18px;
+}
+
+.project-content .btn {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 15px;
+    color: #fff;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.project-content .btn:hover {
+    background-color: #0056b3;
+}
+
+/* Navbar Styles */
 .navbar {
-    background-color: #111; /* Darker navbar background */
+    background-color: #111; /* Dark navbar background */
     padding: 10px 0;
     display: flex;
     justify-content: center;
@@ -34,73 +141,30 @@ body {
     color: #007bff; /* Hover color */
 }
 
-/* Container for content */
-.container {
-    max-width: 1200px; /* Adjust max-width as needed */
-    margin: auto; /* Center content horizontally */
-    padding: 40px;
-    text-align: center; /* Center text */
-}
-
-/* Heading styling */
-h1 {
-    color: #007bff; /* Primary color for heading */
-    margin-bottom: 20px;
-    animation: fadeIn 2s ease-in-out;
-    font-size: 3em; /* Larger font size */
-    font-weight: bold; /* Bold font */
-}
-
-h2 {
-    color: #ffffff; /* Ensure heading text is white */
-    margin-bottom: 20px;
-    animation: fadeIn 3s ease-in-out;
-    font-size: 2em; /* Larger font size */
-}
-
-/* Paragraph styling */
-p {
-    color: #cccccc; /* Slightly lighter text for paragraphs */
-    margin-bottom: 20px;
-    animation: fadeIn 4s ease-in-out;
-    font-size: 1.2em; /* Slightly larger font size */
-    max-width: 800px; /* Limit width for better readability */
-    margin: 0 auto; /* Center paragraphs */
-}
-
-/* Animations */
-@keyframes fadeIn {
-    0% { opacity: 0; }
-    100% { opacity: 1; }
-}
-
-/* Footer styling */
+/* Footer Styles */
 footer {
     text-align: center;
     padding: 20px;
     background-color: #111;
     color: #fff;
     width: 100%;
-    position: fixed;
-    bottom: 0;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
 }
 
-/* Footer navigation links */
-footer .footer-nav {
+.footer-nav {
     display: flex;
     gap: 15px;
 }
 
-footer .footer-nav a {
+.footer-nav a {
     color: #ffffff; /* Footer link color */
     text-decoration: none;
     font-size: 14px;
 }
 
-footer .footer-nav a:hover {
+.footer-nav a:hover {
     color: #007bff; /* Hover color */
 }

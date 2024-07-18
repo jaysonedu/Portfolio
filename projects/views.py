@@ -14,3 +14,4 @@ def project_detail(request, pk):
         "project": project
     }
     return render(request, "projects/project_detail.html", context)
+

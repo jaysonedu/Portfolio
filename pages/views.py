@@ -1,8 +1,10 @@
 from django.shortcuts import render
 from django.core.files.storage import default_storage
 from django.core.files.base import ContentFile
+from .models import HomePageContent
 
-# 7/8 first edit to views
 def home(request):
-    return render(request, "pages/home.html", {})
+    home_content = HomePageContent.objects.first()  # Assuming there's only one record
+    return render(request, 'pages/home.html', {'home_content': home_content})
+
 
