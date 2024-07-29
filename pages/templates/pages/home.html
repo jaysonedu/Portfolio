@@ -1,20 +1,59 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="home-container">
+<section class="home" id="home">
     <div class="home-content">
-        <h1 class="text-center text-primary">Hello, World!</h1>
-        <h2>About me</h2>
-        <div class="about-container">
-            <div class="about-text">
-                <p>Hi! Welcome to my website! My name is Jason Qin, and I am currently studying Computer Science and Economics at Columbia University. Feel free to poke around and leave feedback!</p>
-            </div>
+        <h1>Hi, I'm <span>Jason Qin</span></h1>
+        <div class="text-animate">
+            <h3>Welcome</h3>
+        </div>
+        <p>asldkjfaslkdjfalksdjflas</p>
+        <div class="btn-box">
+            <a href="/resume" class="btn">Resume</a>
+            <a href="/contact" class="btn">Connect</a>
+        </div>
+
+        <div class="home-sci">
+            <a href="https://www.linkedin.com/in/jasonqinedu/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/jaysonedu" target="_blank"><i class='bx bxl-github'></i></a>
+            <a href="mailto:jasonqinedu@gmail.com?subject=[Website]" target="_blank"><i class='bx bx-envelope'></i></a>
+
+        </div>
+
+        <div class="home-imgHover">
+
+        </div>
+
+
+
+        <!--
+                <div class="about-container">
             {% if home_content.headshot %}
             <div class="about-image">
                 <img src="{{ home_content.headshot.url }}" alt="Jason Qin" class="headshot">
             </div>
             {% endif %}
         </div>
+        -->
+
     </div>
-</div>
+</section>
+
+<section class="about" id="about">
+    <h2 class="heading">About <span>Me</span></h2>
+
+    <div class="about-img">
+        <img src="static/images/pfp.jpg" alt="">
+        <span class="circle-spin"></span>
+    </div>
+
+    <div class="about-content">
+        <h3>Hello!</h3>
+        <p>asdlfkjasdlkfjasdkljflaksdjfklasjdf</p>
+
+        <div class="btn-box btns">
+            <a href="#" class="btn">Read More</a>
+        </div>
+    </div>
+</section>
 {% endblock %}
