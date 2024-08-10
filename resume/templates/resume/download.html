@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+<section class="about" id="about">
+    <h2 class="heading">About <span>Me</span></h2>
+
+    <div class="about-img">
+        <img src="/static/images/pfp.jpg" alt="">
+        <span class="circle-spin"></span>
+    </div>
+
+    <div class="about-content">
+        <h3>Hello!</h3>
+        <p>asdlfkjasdlkfjasdkljflaksdjfklasjdf</p>
+
+        <div class="btn-box btns">
+            <a href="{% url 'download_resume' %}" class="btn">Download Resume</a>
+        </div>
+    </div>
+</section>
+{% endblock %}

@@ -1,13 +1,18 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="projects-container">
+<div class="timeline">
     {% for project in projects %}
-    <div class="project-section" style="background-image: url('{{ project.image.url }}');">
-        <div class="project-content">
+    <div class="timeline-container {% cycle 'left' 'right' %}">
+        <img src="{{ project.image.url }}">
+        <div class="timeline-text">
             <h2>{{ project.title }}</h2>
-            <p>{{ project.description|truncatewords:30 }}</p>
-            <a href="{% url 'project_detail' project.pk %}" class="btn btn-primary">Read More</a>
+            <small>{{ project.description }}</small>
+            <div class="btn-box">
+                <a href="{% url 'project_detail' project.pk %}" class="btn">Read More</a>
+            </div>
+            
+            <span class="container-arrow {% cycle 'left' 'right' %}"></span>
         </div>
     </div>
     {% endfor %}

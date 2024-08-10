@@ -1,24 +1,30 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="contact-container">
-    <h1>Get in touch!</h1>
+<section class="contact" id="contact">
+    <h2 class="heading">Contact <span>Me!</span></h2>
 
-    <form method="post" class="contact-form">
+    <form method="post">
         {% csrf_token %}
-        <div class="form-group">
-            <label for="id_name">Your Name:</label>
-            {{ form.name }}
+        <div class="input-box">
+            <div class="input-field">
+                {{ form.name }}
+                <span class="focus"></span>
+            </div>
+            <div class="input-field">
+                {{ form.email }}
+                <span class="focus"></span>
+            </div>
         </div>
-        <div class="form-group">
-            <label for="id_email">Your Email:</label>
-            {{ form.email }}
-        </div>
-        <div class="form-group">
-            <label for="id_message">Your Message:</label>
+  
+        <div class="textarea-field">
             {{ form.message }}
+            <span class="focus"></span>
         </div>
-        <button type="submit" class="btn btn-primary">Send</button>
+        <div class="btn-box btns">
+            <button type="submit" class="btn">Send</button>
+        </div>
+        
     </form>
-</div>
+</section>
 {% endblock %}
