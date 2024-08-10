@@ -1,3 +1,5 @@
 .env
 
 /[Vv]env/
+
+__pycache__
