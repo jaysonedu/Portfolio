@@ -36,7 +36,7 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['web-production-3640.up.railway.app', '127.0.0.1']
 
 
 # Application definition
