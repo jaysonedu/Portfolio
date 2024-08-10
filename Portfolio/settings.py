@@ -36,9 +36,9 @@ DEBUG = os.environ.get('DJANGO_DEBUG', '') != 'False'
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
 
-CSRF_TRUSTED_ORIGINS = ['https://web-production-470d.up.railway.app']
+CSRF_TRUSTED_ORIGINS = ['https://web-production-7a3c5.up.railway.app']
 
-ALLOWED_HOSTS = ['web-production-470d.up.railway.app', '127.0.0.1']
+ALLOWED_HOSTS = ['web-production-7a3c5.up.railway.app', '127.0.0.1']
 
 
 # Application definition
@@ -95,11 +95,8 @@ WSGI_APPLICATION = 'Portfolio.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME': BASE_DIR / 'db.postgresql',
-        'USER': 'jaysonedu',
-        'HOST': 'postgres.railway.internal',
-        'PORT': '5432',
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
 
@@ -157,6 +154,7 @@ STATICFILES_DIRS = [
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
+# Update database configuration from $DATABASE_URL environment variable (if defined)
 import dj_database_url
 
 if 'DATABASE_URL' in os.environ:
@@ -164,3 +162,4 @@ if 'DATABASE_URL' in os.environ:
         conn_max_age=500,
         conn_health_checks=True,
     )
+
