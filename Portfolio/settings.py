@@ -98,6 +98,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': BASE_DIR / 'db.postgresql',
         'USER': 'jaysonedu',
+        'HOST': 'postgres.railway.internal',
+        'PORT': '5432',
     }
 }
 
