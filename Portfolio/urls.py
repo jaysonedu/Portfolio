@@ -11,4 +11,5 @@ urlpatterns = [
     path("", include("pages.urls")),
     path("projects/", include("projects.urls")),
     path("", include("sendemail.urls")),
+    path("NotImplemented/", include("NotImplemented.urls"),)
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

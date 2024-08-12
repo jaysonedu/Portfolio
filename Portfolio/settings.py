@@ -44,6 +44,7 @@ ALLOWED_HOSTS = ['web-production-470d.up.railway.app', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'NotImplemented',
     'resume',
     'projects.apps.ProjectsConfig',
     'pages.apps.PagesConfig',
