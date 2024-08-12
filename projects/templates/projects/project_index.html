@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 
 {% block content %}
-<div class="timeline">
+<section class="timeline">
     {% for project in projects %}
     <div class="timeline-container {% cycle 'left' 'right' %}">
         <img src="{{ project.image.url }}">
@@ -16,5 +16,5 @@
         </div>
     </div>
     {% endfor %}
-</div>
+</section>
 {% endblock %}
