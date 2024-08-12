@@ -160,8 +160,6 @@ import dj_database_url
 
 if 'DATABASE_URL' in os.environ:
     DATABASES = {
-        'default': {
-            dj_database_url.config(default=os.environ.get('DATABASE_URL'),conn_max_age=1800)
-        } 
+        'default': dj_database_url.config(default=os.environ.get('DATABASE_URL'),conn_max_age=1800)
     }
 
