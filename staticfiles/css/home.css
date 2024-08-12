@@ -45,7 +45,7 @@ body {
 }
 
 .header.sticky {
-    background: yellow;
+    background: var(--second-bg-color);
 }
 
 .logo {
@@ -75,6 +75,15 @@ body {
 
 }
 
+span {
+    color: var(--main-color) !important;
+
+}
+
+.home-content h1 span {
+    color: var(--main-color);
+}
+
 section {
     min-height: 100vh;
     padding: 10rem 9% 2rem;
@@ -87,8 +96,6 @@ section {
     background: url('/images/bugcat1.jpg/') no-repeat;
     background-size: cover;
     background-position: center;
-
-
 }
 
 .home-content {
@@ -99,10 +106,6 @@ section {
     font-size: 5.6rem;
     font-weight: 700;
     line-height: 1.3;
-}
-
-.home-content h1 span {
-    color: var(--text-color);
 }
 
 .home-content .text-animate {
@@ -258,11 +261,6 @@ section {
     font-size: 5rem;
     margin-bottom: 3rem;
     text-align: center;
-}
-
-span {
-    color: var(--main-color);
-
 }
 
 .about-img {
@@ -544,4 +542,39 @@ span {
 
 .contact form .btn-box.btns .btn {
     cursor: pointer;
+}
+
+.NotImplemented {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 2rem;
+    background: black;
+    padding-bottom: 6rem;
+}
+
+.NAimg {
+    position: relative;
+    width: 25rem;
+    height: 25rem;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.NAimg img {
+    width: 90%;
+    border-radius: 50%;
+    border: .2rem solid var var(--main-color);
+
+}
+
+.NotImplementedText {
+    text-align: center;
+}
+
+.NotImplementedText h3 {
+    font-size: 2.6rem;
 }

@@ -45,7 +45,7 @@ body {
 }
 
 .header.sticky {
-    background: yellow;
+    background: var(--second-bg-color);
 }
 
 .logo {
