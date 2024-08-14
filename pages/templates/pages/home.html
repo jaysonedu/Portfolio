@@ -5,7 +5,7 @@
     <div class="home-content">
         <h1>Hi, I'm <span>Jason Qin</span></h1>
         <div class="text-animate">
-            <h3>Welcome</h3>
+            <h3 id="text">Welcome</h3>
         </div>
         <p>asldkjfaslkdjfalksdjflas</p>
         <div class="btn-box">
@@ -25,5 +25,43 @@
         </div>
 
     </div>
+
+    <!--Source from https://www.winterwind.com/tutorials/js/2-->
+    <script>
+    var text = document.getElementById('text'),
+    chars = '!@$%^&*()<>/abcdefghijklmnopqrstuvwxyz',
+    arrChars = text.innerHTML.split(''),
+    strCharSplit = '',
+    interval
+
+    function changeLetters(str) {
+        if(str.innerHTML !== ' ') {
+            str.innerHTML = chars[Math.floor(Math.random() * chars.length)]
+        }
+    }
+
+    for (i = 0; i < arrChars.length; i++) {
+        var strChar = arrChars[i]
+        strCharSplit = strCharSplit + "<span data-ltr='" + strChar + "'>" + strChar + "</span>"
+    }
+    
+    text.innerHTML = strCharSplit
+
+    text.onmouseover = function() {
+        interval = setInterval(function() {
+            for (i = 0; i < text.childNodes.length; i++) {
+                changeLetters(text.childNodes[i])
+            }
+        }, 100)
+    }
+
+    text.onmouseout = function() {
+        clearInterval(interval)
+        for(i = 0; i < text.childNodes.length; i++) {
+            var letter = text.childNodes[i]
+            letter.innerHTML = letter.getAttribute('data-ltr')
+        }
+    }
+    </script>
 </section>
 {% endblock %}
