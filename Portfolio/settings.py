@@ -22,8 +22,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # Support env variables from .env file if defined
 import os
 from dotenv import load_dotenv
-env_path = load_dotenv(os.path.join(BASE_DIR, '.env'))
-load_dotenv(env_path)
+# env_path = load_dotenv(os.path.join(BASE_DIR, '.env'))
+load_dotenv()
 
 # SECURITY WARNING: keep the secret key used in production secret!
 # SECRET_KEY = 'django-insecure-r9+ia%apt^9!y0dky41ia=*bf=cr7z#lew*z)g$)h1c!mk0g_a'
@@ -159,7 +159,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 import dj_database_url
 
 if 'DATABASE_URL' in os.environ:
-    DATABASES = {
-        'default': dj_database_url.config(default=os.environ.get('Postgres.DATABASE_URL'),conn_max_age=1800)
-    }
-
+    DATABASES['default'] = dj_database_url.config(
+        conn_max_age=500,
+        conn_health_checks=True,
+    )
