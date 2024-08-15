@@ -7,8 +7,8 @@
         <div class="text-animate">
             <h3 id="text">Hover here!</h3>
         </div>
-        <p>I am a student at Columbia University studying Computer Science and Economics.
-            Thank you for visiting my page. Feel free to poke around!
+        <p>I am a student and <a href="https://www.engineering.columbia.edu/egleston-scholars/jason-qin" target="_blank" class = 'link'>Egleston Scholar</a> at Columbia University studying Computer Science and Economics.
+            <br><br>Thank you for visiting my page!
         </p>
         <div class="btn-box">
             <a href="/resume" class="btn">Resume</a>
@@ -28,45 +28,70 @@
 
     </div>
 
-    <!--Source: Zach Goodson, Github: Quantum-Studios-->
+    <!--Inspired by: Zach Goodson, Github: Quantum-Studios-->
     <script>
         const letters = "abcdefghijklmnopqrstuvwxyz";
-   
         let interval = null;
-   
+        let revertInterval = null;
+    
         document.getElementById("text").onmouseover = event => {
-             let iteration = 0;
-   
-             clearInterval(interval);
-   
-             interval = setInterval(() => {
-                  event.target.innerText = event.target.innerText
-                       .split("")
-                       .map((letter, index) => {
-                            if (index < iteration) {
-                                 return event.target.dataset.value[index];
+            let iteration = 0;
+            const originalText = "Hover here!";
+            
+            clearInterval(interval);
+            clearInterval(revertInterval); // Clear any existing revert interval
+    
+            interval = setInterval(() => {
+                event.target.innerText = event.target.innerText
+                    .split("")
+                    .map((letter, index) => {
+                        if (index < iteration || !letters.includes(originalText[index].toLowerCase())) {
+                            return originalText[index];
+                        }
+                        return letters[Math.floor(Math.random() * 26)];
+                    })
+                    .join("");
+    
+                if (iteration >= originalText.length) {
+                    clearInterval(interval);
+                }
+    
+                iteration += originalText.length / 30; // Control speed so it ends in 1s
+            }, 30);
+    
+            // Start reverting each letter one by one after the effect ends
+            setTimeout(() => {
+                clearInterval(interval);
+                let revertIteration = 0;
+    
+                revertInterval = setInterval(() => {
+                    event.target.innerText = event.target.innerText
+                        .split("")
+                        .map((letter, index) => {
+                            if (index < revertIteration || !letters.includes(originalText[index].toLowerCase())) {
+                                return originalText[index];
                             }
-   
-                            return letters[Math.floor(Math.random() * 26)]
-                       })
-                       .join("");
-   
-                  if (iteration >= event.target.dataset.value.length) {
-                       clearInterval(interval);
-                  }
-   
-                  iteration += 1 / 3;
-             }, 30);
+                            return event.target.innerText[index];
+                        })
+                        .join("");
+    
+                    if (revertIteration >= originalText.length) {
+                        clearInterval(revertInterval);
+                    }
+    
+                    revertIteration++;
+                }, 100); // Adjust the speed of reverting letters here
+            }, 1000); // 1 second timeout
         }
-
-        text.onmouseout = function() {
-            clearInterval(interval)
-            for(i = 0; i < text.childNodes.length; i++) {
-                var letter = text.childNodes[i]
-                letter.innerHTML = letter.getAttribute('data-ltr')
-            }
+    
+        document.getElementById("text").onmouseout = function() {
+            clearInterval(interval);
+            clearInterval(revertInterval);
+            event.target.innerText = "Hover here!";
         }
-   </script>
+    </script>
+    
+    
 
 </section>
 {% endblock %}
