@@ -337,7 +337,8 @@ section {
     margin: 100px auto 0;
 }
 
-.timeline .btn-box {
+.timeline .btn-box .btn {
+    font-size: 1.5rem;
     width: 100%;
     height: 5rem;
 }
@@ -483,6 +484,7 @@ section {
     .timeline-container img {
         left: -60px; /* Position all images on the left side */
         right: auto;
+        display: none;
     }
 
     .container-arrow.left {
