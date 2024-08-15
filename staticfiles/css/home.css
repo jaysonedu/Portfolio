@@ -45,7 +45,7 @@ body {
 }
 
 .header.sticky {
-    background: var(--second-bg-color);
+    background: var(--bg-color);
 }
 
 .logo {
@@ -111,6 +111,7 @@ section {
 .home-content .text-animate {
     position: relative;
     width: 32.8rem;
+    animation-duration: 1s;
 }
 
 .home-content .text-animate h3 {
@@ -288,18 +289,32 @@ section {
     width: 100%;
     height: 100%;
     border-radius: 50%;
-    border-top: .2rem solid var(--second-bg-color);
-    border-bottom: .2rem solid var(--second-bg-color);
+    border-top: .2rem solid black;
+    border-bottom: .2rem solid black;
     border-left: .2rem solid var(--main-color);
-    border-right: .2rem solid var(--main-color)
+    border-right: .2rem solid var(--main-color);
+
+    animation: aboutSpinner 8s linear infinite;
+}
+
+@keyframes aboutSpinner {
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+.link {
+    color: var(--main-color);
 }
 
 .about-content {
-    text-align: center;
+    text-align: left;
 }
 
 .about-content h3 {
     font-size: 2.6rem;
+    border-bottom: 4px solid var(--main-color);
+    padding-bottom: 5px;
 }
 
 .about-content p {
@@ -329,25 +344,29 @@ section {
     animation: movedown 1s linear forwards;
     opacity: 0;
 }
+
 @keyframes movedown {
-    0%{
+    0% {
         opacity: 0;
         transform: translateY(-30px);
     }
-    100%{
+    100% {
         opacity: 1;
         transform: translateY(0px);
     }
 }
 
-.timeline-container:nth-child(1){
+.timeline-container:nth-child(1) {
     animation-delay: 0s;
 }
-.timeline-container:nth-child(2){
+.timeline-container:nth-child(2) {
     animation-delay: 1s;
 }
-.timeline-container:nth-child(3){
+.timeline-container:nth-child(3) {
     animation-delay: 2s;
+}
+.timeline-container:nth-child(4) {
+    animation-delay: 3s;
 }
 
 .timeline-text {
@@ -376,8 +395,9 @@ section {
     z-index: 10;
 }
 
-.timeline-container.right img{
+.timeline-container.right img {
     left: -20px;
+    right: auto;
 }
 
 .timeline::after {
@@ -392,20 +412,21 @@ section {
     z-index: -1;
     animation: moveline 3s linear forwards;
 }
+
 @keyframes moveline {
-    0%{
+    0% {
         height: 0;
     }
-    100%{
+    100% {
         height: 100%;
     }
 }
 
-.timeline-text h2{
+.timeline-text h2 {
     font-weight: 600;
 }
 
-.timeline-text small{
+.timeline-text small {
     display: inline-block;
     margin-bottom: 15px;
 }
@@ -434,40 +455,45 @@ section {
     left: -15px;
 }
 
-@media screen and (max-width: 600px){
-    .timeline{
+@media screen and (max-width: 600px) {
+    .timeline {
         margin: 50px auto;
     }
+
     .timeline::after {
-        left: 31px;
+        left: 31px; /* Move the vertical line to the left */
     }
+
     .timeline-container {
         width: 100%;
         padding-left: 80px;
         padding-right: 25px;
     }
-    .timeline-text{
-        font-size: 13px;
+
+    .timeline-container.right,
+    .timeline-container.left {
+        left: 0; /* Align both left and right containers to the left */
     }
 
-    .timeline-text small{
-        margin-bottom: 10px;
+    .timeline-container img {
+        left: -60px; /* Position all images on the left side */
+        right: auto;
     }
 
-    .timeline-container.right{
-        left: 0;
-    }
-
-    .timeline-container.left img .timeline-container.right img {
-        left: 10px;
-    }
-
-    .container-arrow.left img .container-arrow.right img {
-        border-right: 15px solid white;
-        border-left: 0;
+    .container-arrow.left {
+        border-left: 15px solid white;
+        border-right: none;
         left: -15px;
     }
+
+    .container-arrow.right {
+        border-left: 15px solid white; /* Change direction to left */
+        border-right: none;
+        left: -15px; /* Position all arrows on the left side */
+    }
 }
+
+
 
 .contact {
     min-height: auto;
@@ -577,4 +603,26 @@ section {
 
 .NotImplementedText h3 {
     font-size: 2.6rem;
+}
+
+/* Breakpoints */
+@media (max-width: 1200px) {
+    html {
+        font-size: 55%;
+    }
+}
+
+@media (max-width: 991px) {
+    .header {
+        padding: 2rem 4%;
+    }
+
+    section {
+        padding: 10rem 4% 2rem;
+    }
+
+    .home {
+        padding: 0 4%;
+    }
+    
 }
