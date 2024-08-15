@@ -337,6 +337,11 @@ section {
     margin: 100px auto 0;
 }
 
+.timeline .btn-box {
+    width: 100%;
+    height: 5rem;
+}
+
 .timeline-container {
     padding: 10px 50px;
     position: relative;
@@ -481,15 +486,17 @@ section {
     }
 
     .container-arrow.left {
-        border-left: 15px solid white;
-        border-right: none;
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-right: 15px solid white;
         left: -15px;
     }
 
     .container-arrow.right {
-        border-left: 15px solid white; /* Change direction to left */
-        border-right: none;
-        left: -15px; /* Position all arrows on the left side */
+        border-top: 15px solid transparent;
+        border-bottom: 15px solid transparent;
+        border-right: 15px solid white;
+        left: -15px;
     }
 }
 
