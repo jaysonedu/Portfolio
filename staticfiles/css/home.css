@@ -455,7 +455,7 @@ section {
     left: -15px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 991px) {
     .timeline {
         margin: 50px auto;
     }

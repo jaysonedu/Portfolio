@@ -6,36 +6,41 @@
     <div class="timeline-container {% cycle 'left' 'right' %}">
         <img src="/static/images/crane.png">
         <div class="timeline-text">
-            <h2>{{ project.title }}</h2>
-            <small>{{ project.description }}</small>
             <div class="btn-box">
-                <a href="{% url 'project_detail' project.pk %}" class="btn">Read More</a>
+                <a href="{% url 'project_detail' project.pk %}" class="btn">{{ project.title }}</a>
             </div>
+            <br>
+            <p class="location">{{ project.location }}</p>
+            <p class="date">{{ project.timeframe }}</p>
+            <p class="overview">{{ project.overview }}</p>
 
-            <p>
-                Oak Ridge National Laboratory, Oak Ridge, TN                                                                                June 2024 – Present
-            •	Machine Learning Research Intern, Computer Science and Mathematics Division.
-            •	Research on Federated Learning and Differential Privacy algorithms for decentralized data.
-            Columbia University, New York, NY                                                                                             January 2024 – Present
-            •	Undergraduate Researcher, Computer Graphics and User Interfaces Laboratory, Department of Computer Science.
-            •	Research on computer vision and gaze analysis using Machine Learning (feature detection) for multi-selection in Augmented Reality systems.
-            •	Skills: Unity, C#, User Interfaces, Computer Graphics, AR/VR, Computer Vision. 
-            MIT Lincoln Laboratory, Beaver Works Summer Institute, Cambridge, MA                             March – August 2022
-            •	Quantum Software program: implemented qubit transformation, entanglement, and quantum algorithms. 
-            •	Best video award for Variational Quantum Eigensolver to solve matrix eigenvalues project. 
-            •	Skills: Quantum Software, Q#, Qiskit, Git. 
-            Northwestern University, Evanston, IL                                                                                October 2021 – October 2022
-            •	Research internship, Computational Photography Laboratory, Department of Computer Science. 
-            •	Research on three-dimensional computational imaging and machine vision for skin texture applications.
-            •	Skills: Python, Jupyter Notebook, Machine Vision, OpenCV, Linux OS, Raspberry Pi, imaging calibrations.
-            Stony Brook University, Stony Brook, NY                                                                        September 2019 – August 2021
-            •	Research internship, image based computational fractal dimension analysis applied to cancer detection. 
-            •	First author of published IEEE conference proceedings paper and Joint Mathematics Meetings abstract. 
-            </p>
+
+            
             
             <span class="container-arrow {% cycle 'left' 'right' %}"></span>
         </div>
     </div>
     {% endfor %}
 </section>
+
+<p>
+    Oak Ridge National Laboratory, Oak Ridge, TN                                                                                June 2024 – Present
+•	Machine Learning Research Intern, Computer Science and Mathematics Division.
+•	Research on Federated Learning and Differential Privacy algorithms for decentralized data.
+Columbia University, New York, NY                                                                                             January 2024 – Present
+•	Undergraduate Researcher, Computer Graphics and User Interfaces Laboratory, Department of Computer Science.
+•	Research on computer vision and gaze analysis using Machine Learning (feature detection) for multi-selection in Augmented Reality systems.
+•	Skills: Unity, C#, User Interfaces, Computer Graphics, AR/VR, Computer Vision. 
+MIT Lincoln Laboratory, Beaver Works Summer Institute, Cambridge, MA                             March – August 2022
+•	Quantum Software program: implemented qubit transformation, entanglement, and quantum algorithms. 
+•	Best video award for Variational Quantum Eigensolver to solve matrix eigenvalues project. 
+•	Skills: Quantum Software, Q#, Qiskit, Git. 
+Northwestern University, Evanston, IL                                                                                October 2021 – October 2022
+•	Research internship, Computational Photography Laboratory, Department of Computer Science. 
+•	Research on three-dimensional computational imaging and machine vision for skin texture applications.
+•	Skills: Python, Jupyter Notebook, Machine Vision, OpenCV, Linux OS, Raspberry Pi, imaging calibrations.
+Stony Brook University, Stony Brook, NY                                                                        September 2019 – August 2021
+•	Research internship, image based computational fractal dimension analysis applied to cancer detection. 
+•	First author of published IEEE conference proceedings paper and Joint Mathematics Meetings abstract. 
+</p>
 {% endblock %}
