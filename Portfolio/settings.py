@@ -44,6 +44,7 @@ ALLOWED_HOSTS = ['jasonqin.up.railway.app', '127.0.0.1']
 # Application definition
 
 INSTALLED_APPS = [
+    'experience',
     'NotImplemented',
     'resume',
     'projects.apps.ProjectsConfig',
