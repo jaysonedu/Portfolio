@@ -2,21 +2,65 @@
 
 {% block content %}
 <section class="timeline">
-    {% for project in projects %}
-    <div class="timeline-container {% cycle 'left' 'right' %}">
-        <!--<img src="/static/images/crane.png">
-    -->
-        <div class="timeline-text">
-            <h3><span># </span>{{ project.title }}</h3>
-            <p class="location">{{ project.location }}</p>
-            <p class="overview"><span>Overview: </span>{{ project.description }}</p>
-            <p class="technology"><span>Technology: </span>{{ project.technology }}</p>
-            <p class="date">{{ project.timeframe }}</p> 
 
-            <span class="container-arrow {% cycle 'left' 'right' %}"></span>
+    <div class="timeline-container left">
+        <div class="timeline-text">
+            <h3><span># </span>Machine Learning Intern</h3>
+            <p class="location">Oak Ridge National Laboratory, Oak Ridge, TN</p>
+            <p class="description"><span>- </span>Researching Machine Learning and Gradient Descent Inversion Attacks.
+            <br><span>- </span>Implementing Differential Privacy algorithms and database design for Decentralized Federated Learning. 
+            </p>
+            <p class="technology"><span>Technology: </span>Python, PyTorch, Opacus, Numpy, Pandas, Scikit-learn, Seaborn, Jupyter, SQL</p>
+            <p class="date">August 2024 - present</p> 
+
+            <span class="container-arrow left"></span>
         </div>
     </div>
-    {% endfor %}
+
+    <div class="timeline-container right">
+        <div class="timeline-text">
+            <h3><span># </span>Student Researcher</h3>
+            <p class="location">Columbia University, New York, NY</p>
+            <p class="description"><span>- </span>Researching Computer Vision and Feature Analysis for User State Prediction in Augmented Reality environments.
+            <br><span>- </span>Previous work on Segmented Dimming of Augmented Reality User Interfaces.
+            </p>
+            <p class="technology"><span>Technology: </span>Unity, C#, Python, Microsoft MRTK/HoloLens 2, MagicLeap 2</p>
+            <p class="date">August 2024 - present</p> 
+
+            <span class="container-arrow right"></span>
+        </div>
+    </div>
+
+    <div class="timeline-container left">
+        <div class="timeline-text">
+            <h3><span># </span>Research Intern</h3>
+            <p class="location">Northwestern University, Evanston, IL</p>
+            <p class="description"><span>- </span>SkinScan: 3D Computational Imaging and Computer Vision to analyze skin texture
+            <br><span>- </span>Tested imaging calibration (intrinsic, geometric, and radiometric) tools by mapping a 3D physical environment.
+            <br><span>- </span>Implemented alternative camera exposure settings using Linux systems.
+            </p>
+            <p class="technology"><span>Technology: </span>Python, OpenCV, PyTorch, Jupyter, Linux OS, Raspberry Pi</p>
+            <p class="date">October 2021 - October 2022</p> 
+
+            <span class="container-arrow left"></span>
+        </div>
+    </div>
+
+    <div class="timeline-container right">
+        <div class="timeline-text">
+            <h3><span># </span>Research Intern</h3>
+            <p class="location">Stony Brook University, Stony Brook, NY</p>
+            <p class="description"><span>- </span>Researched image-based computational fractal dimension analysis applied to cancer detection.
+            <br><span>- </span>First author of published IEEE conference proceedings paper and Joint Mathematics Meetings abstract.
+            </p>
+            <p class="technology"><span>Technology: </span>Python, ImageJ</p>
+            <p class="date">September 2019 - August 2021</p> 
+
+            <span class="container-arrow right"></span>
+        </div>
+    </div>
+    
+
 </section>
 
 {% endblock %}
