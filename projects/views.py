@@ -1,7 +1,8 @@
 from django.shortcuts import render
 from projects.models import Project
 
-def project_index(request):
+
+""" def project_index(request):
     projects = Project.objects.all()
     context = {
         "projects": projects
@@ -13,5 +14,7 @@ def project_detail(request, pk):
     context = {
         "project": project
     }
-    return render(request, "projects/project_detail.html", context)
+    return render(request, "projects/project_detail.html", context) """
 
+def project_home(request):
+    return render(request, "projects/project_index.html")
