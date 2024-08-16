@@ -347,7 +347,7 @@ section {
 .timeline-container {
     padding: 10px 50px;
     position: relative;
-    width: 50%;
+    width: 60%;
     animation: movedown 1s linear forwards;
     opacity: 0;
 }
@@ -391,6 +391,7 @@ section {
     color: white;
     position: relative;
     border-radius: 6px;
+    left: -100px;
 }
 
 .date {
@@ -484,6 +485,11 @@ section {
         width: 100%;
         padding-left: 80px;
         padding-right: 25px;
+
+    }
+
+    .timeline-text {
+        left: 0;
     }
 
     .timeline-container.right,
