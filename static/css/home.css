@@ -343,12 +343,19 @@ section {
     height: 5rem;
 }
 
+
 .timeline-container {
     padding: 10px 50px;
     position: relative;
     width: 50%;
     animation: movedown 1s linear forwards;
     opacity: 0;
+}
+
+.timeline-container h3 {
+    font-size: 2.6rem;
+    border-bottom: 4px solid var(--main-color);
+    padding-bottom: 5px;
 }
 
 @keyframes movedown {
@@ -377,10 +384,18 @@ section {
 
 .timeline-text {
     padding: 20px 30px;
-    background: #fff;
-    color: black;
+    font-size: 1.6rem;
+    margin: 2rem 0 3rem;
+    background: black;
+    outline: solid var(--main-color);
+    color: white;
     position: relative;
     border-radius: 6px;
+}
+
+.date {
+    font-size: 1.3rem;
+    text-align: right;
 }
 
 .timeline-container.left {
@@ -411,7 +426,7 @@ section {
     position: absolute;
     width: 6px;
     height: 100%;
-    background: white;
+    background: var(--main-color);
     top: 0;
     left: 50%;
     margin-left: -3px;
@@ -432,11 +447,6 @@ section {
     font-weight: 600;
 }
 
-.timeline-text small {
-    display: inline-block;
-    margin-bottom: 15px;
-}
-
 .container-arrow.left {
     height: 0;
     width: 0;
@@ -445,8 +455,8 @@ section {
     z-index: 1;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-left: 15px solid white;
-    right: -14px;
+    border-left: 15px solid var(--main-color);
+    right: -15px;
 }
 
 .container-arrow.right {
@@ -457,7 +467,7 @@ section {
     z-index: 1;
     border-top: 15px solid transparent;
     border-bottom: 15px solid transparent;
-    border-right: 15px solid white;
+    border-right: 15px solid var(--main-color);
     left: -15px;
 }
 
@@ -490,14 +500,16 @@ section {
     .container-arrow.left {
         border-top: 15px solid transparent;
         border-bottom: 15px solid transparent;
-        border-right: 15px solid white;
+        border-right: 15px solid var(--main-color);
+        border-left: 0px;
         left: -15px;
     }
 
     .container-arrow.right {
         border-top: 15px solid transparent;
         border-bottom: 15px solid transparent;
-        border-right: 15px solid white;
+        border-right: 15px solid var(--main-color);
+        border-left: 0px;
         left: -15px;
     }
 }

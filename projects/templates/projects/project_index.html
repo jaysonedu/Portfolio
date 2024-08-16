@@ -4,19 +4,15 @@
 <section class="timeline">
     {% for project in projects %}
     <div class="timeline-container {% cycle 'left' 'right' %}">
-        <img src="/static/images/crane.png">
+        <!--<img src="/static/images/crane.png">
+    -->
         <div class="timeline-text">
-            <div class="btn-box">
-                <a href="{% url 'project_detail' project.pk %}" class="btn">{{ project.title }}</a>
-            </div>
-            <br>
+            <h3><span># </span>{{ project.title }}</h3>
             <p class="location">{{ project.location }}</p>
-            <p class="date">{{ project.timeframe }}</p>
-            <p class="overview">{{ project.overview }}</p>
-
-
-            
-            
+            <p class="overview"><span>Overview: </span>{{ project.description }}</p>
+            <p class="technology"><span>Technology: </span>{{ project.technology }}</p>
+            <p class="date">{{ project.timeframe }}</p> 
+                     
             <span class="container-arrow {% cycle 'left' 'right' %}"></span>
         </div>
     </div>
