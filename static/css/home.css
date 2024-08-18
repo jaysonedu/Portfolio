@@ -526,7 +526,6 @@ section {
 }
 
 .projects {
-    display: flex;
     flex-direction: column;
     gap: 2rem;
     background: black;
@@ -603,8 +602,6 @@ section {
 .close:focus {
     color: #ffffff;
 }
-
-
 
 .contact {
     min-height: auto;
