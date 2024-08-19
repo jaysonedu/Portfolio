@@ -72,7 +72,6 @@ body {
     color: var(--text-color);
     cursor: pointer;
     display: none;
-
 }
 
 span {
@@ -526,13 +525,14 @@ section {
 }
 
 .projects {
+    display: flex;
+    background: black;
+    padding-bottom: 6rem;
     flex-direction: column;
     gap: 2rem;
-    background: black;
-    padding: 5rem 9%;
 }
 
-.projects.project-grid {
+.project-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr); /* 3 cards per row */
     gap: 2rem;
@@ -546,8 +546,6 @@ section {
     cursor: pointer;
     transition: transform 0.3s, box-shadow 0.3s;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
     align-items: center;
 }
 
@@ -557,8 +555,8 @@ section {
 }
 
 .project-card .card-content {
-    text-align: center;
     color: var(--text-color);
+    font-size: 1.6rem;
 }
 
 .project-card .card-title {
@@ -566,6 +564,12 @@ section {
     font-weight: 600;
     color: var(--main-color);
     margin-bottom: 1.5rem;
+    border-bottom: 4px solid var(--main-color);
+    padding-bottom: 5px;
+}
+
+.project-card .card-description {
+    display: none;
 }
 
 /* Modal Styles */
@@ -584,10 +588,16 @@ section {
     background-color: var(--bg-color);
     margin: 15% auto;
     padding: 2rem;
+    font-size: 1.3rem;
     border: 1px solid var(--main-color);
     width: 60%;
     border-radius: 10px;
     color: var(--text-color);
+}
+
+.h3 {
+    font-size: 1.75rem;
+    border-bottom: var(--main-color);
 }
 
 .close {
