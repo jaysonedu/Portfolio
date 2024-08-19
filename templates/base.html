@@ -52,7 +52,7 @@ document.getElementById('theme-toggle').addEventListener('click', function() {
     // Get current background color
     let currentBgColor = getComputedStyle(document.documentElement).getPropertyValue('--bg-color').trim();
 
-    if (currentBgColor === 'rgb(245, 245, 245)') { // Light mode (hex #f5f5f5)
+    if (currentBgColor === 'rgb(255, 255, 255)') { // Light mode (white)
         // Switch to dark mode
         document.documentElement.style.setProperty('--bg-color', 'var(--bg-color-dark)');
         document.documentElement.style.setProperty('--second-bg-color', 'var(--second-bg-color-dark)');
