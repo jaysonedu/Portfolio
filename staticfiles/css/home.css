@@ -387,7 +387,7 @@ section {
     margin: 2rem 0 3rem;
     background: black;
     outline: solid var(--main-color);
-    color: white;
+    color: var(--text-color);
     position: relative;
     border-radius: 6px;
     left: -100px;
@@ -600,8 +600,8 @@ section {
     padding-bottom: 5px;
 }
 
-.h3 {
-    font-size: 1.5rem;
+.card-technology-header {
+    font-size: 1.75rem;
     border-bottom: var(--main-color);
 }
 
