@@ -49,15 +49,17 @@
 
 <script>
 document.getElementById('theme-toggle').addEventListener('click', function() {
-    // Check current background color
+    // Get current background color
     let currentBgColor = getComputedStyle(document.documentElement).getPropertyValue('--bg-color').trim();
 
-    if (currentBgColor === '#f5f5f5') { // Light mode
+    if (currentBgColor === 'rgb(245, 245, 245)') { // Light mode (hex #f5f5f5)
+        // Switch to dark mode
         document.documentElement.style.setProperty('--bg-color', 'var(--bg-color-dark)');
         document.documentElement.style.setProperty('--second-bg-color', 'var(--second-bg-color-dark)');
         document.documentElement.style.setProperty('--text-color', 'var(--text-color-dark)');
         document.documentElement.style.setProperty('--main-color', 'var(--main-color-dark)');
     } else { // Dark mode
+        // Switch to light mode
         document.documentElement.style.setProperty('--bg-color', 'var(--bg-color-light)');
         document.documentElement.style.setProperty('--second-bg-color', 'var(--second-bg-color-light)');
         document.documentElement.style.setProperty('--text-color', 'var(--text-color-light)');
