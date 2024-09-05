@@ -6,12 +6,5 @@ Creation Date: 7/8/2024
 
 About: Personal Portfolio using Python Django with CSS, Bootstrap, HTML, and JavaScript. Deployed with Railway and linked to PostgreSQL database.
 
-Requirements:
-Django
-dj-database-url
-gunicorn
-psycopg2-binary
-wheel
-whitenoise
-python-dotenv
+To run locally, run 'pip install -r requirements.txt' in the root directory of this cloned repository.
 
