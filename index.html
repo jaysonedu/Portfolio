@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <link rel="icon" href="static/images/crane.png" type="image/icon type">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>J.Qin</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/home.css" rel="stylesheet">
+    <script src="static/js/home.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <a href="/" class="logo">j.qin
+        </a>
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <nav class="navbar">
+            <a href="/" class="active">Home</a>
+            <a href="resume.html">Resume</a>
+            <a href="experience.html">Experience</a>
+            <a href="projects.html">Projects</a>
+
+            <!-- Light/dark toggle button -->
+            <button id="theme-toggle" onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle theme">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              width="1em"
+              height="1em"
+              class="theme-toggle__dark-side"
+              fill="currentColor"
+              viewBox="0 0 32 32"
+            >
+              <path d="M16 .5C7.4.5.5 7.4.5 16S7.4 31.5 16 31.5 31.5 24.6 31.5 16 24.6.5 16 .5zm0 28.1V3.4C23 3.4 28.6 9 28.6 16S23 28.6 16 28.6z" />
+            </svg>
+            </button>
+        </nav>
+    </header>
+
+<section class="home" id="home">
+    <div class="home-content">
+        <h1>Hi, I'm <span>Jason Qin</span></h1>
+        <div class="text-animate">
+            <h3 id="text">Hover here!</h3>
+        </div>
+        <p>I am a student and <a href="https://www.engineering.columbia.edu/egleston-scholars/jason-qin" target="_blank" class = 'link'>Egleston Scholar</a> at Columbia University studying Computer Science with minors in Statistics and Economics.
+            <br><br>Thank you for visiting my page!
+        </p>
+        <div class="btn-box">
+            <a href="resume.html" class="btn">Resume</a>
+        </div>
+
+        <div class="home-sci">
+            <a href="https://www.linkedin.com/in/jasonqinedu/" target="_blank"><i class='bx bxl-linkedin'></i></a>
+            <a href="https://github.com/jaysonedu" target="_blank"><i class='bx bxl-github'></i></a>
+            <a href="mailto:jasonqinedu@gmail.com?subject=[Website]" target="_blank"><i class='bx bx-envelope'></i></a>
+
+        </div>
+<!--
+        <div class="home-imgHover">
+            
+        </div>
+-->
+    </div>
+
+    <!--Inspired by: Zach Goodson, Github: Quantum-Studios-->
+    <script>
+        const letters = "abcdefghijklmnopqrstuvwxyz";
+        let interval = null;
+        let revertInterval = null;
+    
+        document.getElementById("text").onmouseover = event => {
+            let iteration = 0;
+            const originalText = "Hover here!";
+            
+            clearInterval(interval);
+            clearInterval(revertInterval); // Clear any existing revert interval
+    
+            interval = setInterval(() => {
+                event.target.innerText = event.target.innerText
+                    .split("")
+                    .map((letter, index) => {
+                        if (index < iteration || !letters.includes(originalText[index].toLowerCase())) {
+                            return originalText[index];
+                        }
+                        return letters[Math.floor(Math.random() * 26)];
+                    })
+                    .join("");
+    
+                if (iteration >= originalText.length) {
+                    clearInterval(interval);
+                }
+    
+                iteration += originalText.length / 30; // Control speed so it ends in 1s
+            }, 30);
+    
+            // Start reverting each letter one by one after the effect ends
+            setTimeout(() => {
+                clearInterval(interval);
+                let revertIteration = 0;
+    
+                revertInterval = setInterval(() => {
+                    event.target.innerText = event.target.innerText
+                        .split("")
+                        .map((letter, index) => {
+                            if (index < revertIteration || !letters.includes(originalText[index].toLowerCase())) {
+                                return originalText[index];
+                            }
+                            return event.target.innerText[index];
+                        })
+                        .join("");
+    
+                    if (revertIteration >= originalText.length) {
+                        clearInterval(revertInterval);
+                    }
+    
+                    revertIteration++;
+                }, 100); // Adjust the speed of reverting letters here
+            }, 1000); // 1 second timeout
+        }
+    
+        document.getElementById("text").onmouseout = function() {
+            clearInterval(interval);
+            clearInterval(revertInterval);
+            event.target.innerText = "Hover here!";
+        }
+    </script>
+    
+
+</section>
+
+<script>
+    // Function to toggle theme and save the preference
+    function toggleTheme() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+
+        // Save the preference in localStorage
+        if (element.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+        } else {
+            localStorage.setItem("theme", "light");
+        }
+    }
+
+    // On page load, check the saved theme and apply it
+    window.onload = function() {
+        var savedTheme = localStorage.getItem("theme");
+        if (savedTheme && savedTheme === "dark") {
+            document.body.classList.add("dark-mode");
+        }
+    };
+</script>
+
+    <!-- Include jQuery, Popper.js, and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

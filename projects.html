@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+ 
+<head>
+    <link rel="icon" href="static/images/crane.png" type="image/icon type">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - J.Qin</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="static/css/home.css" rel="stylesheet">
+    <script src="static/js/home.js"></script>
+</head>
+
+<body>
+    <header class="header">
+        <a href="/" class="logo">j.qin
+        </a>
+
+        <div class="bx bx-menu" id="menu-icon"></div>
+
+        <nav class="navbar">
+            <a href="/">Home</a>
+            <a href="resume.html">Resume</a>
+            <a href="experience.html">Experience</a>
+            <a href="projects.html" class="active">Projects</a>
+
+            <!-- Light/dark toggle button -->
+            <button id="theme-toggle" onclick="toggleTheme()" class="theme-toggle" aria-label="Toggle theme">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              aria-hidden="true"
+              width="1em"
+              height="1em"
+              class="theme-toggle__dark-side"
+              fill="currentColor"
+              viewBox="0 0 32 32"
+            >
+              <path d="M16 .5C7.4.5.5 7.4.5 16S7.4 31.5 16 31.5 31.5 24.6 31.5 16 24.6.5 16 .5zm0 28.1V3.4C23 3.4 28.6 9 28.6 16S23 28.6 16 28.6z" />
+            </svg>
+            </button>
+        </nav>
+    </header>
+
+<section class="projects" id="projects">
+    <h2 class="heading">Projects</h2>
+
+    <div class="project-grid">
+        <div class="project-card"  
+        card-description="
+            - Co-Founder and Backend Engineer for AI Conversation Startup helping users learn social skills using Voice AI (ElevenLabs).
+            
+            - Integrated CI/CD logging pipelines with Agentic AI workflows and LLM evaluation to enhance conversation quality.
+            
+            - Developed backend solutions for voice-based AI interactions and social learning platforms.
+        "
+        card-technology="
+        Python, ElevenLabs, CI/CD, LLM, Agentic AI, Backend Development, Voice AI
+        ">
+            <div class="card-content">
+                <h5 class="card-title">AI Conversation Startup</h5>
+                <p class="card-text">Co-Founder and Backend Engineer for Voice AI social skills learning platform!</p>
+            </div>
+        </div>
+
+        <div class="project-card"  
+        card-description="
+            - Improved system calibration accuracy and expanded production compatibility to 3D Linux camera environments.
+            
+            - Enhanced SkinScan CV system for 3D Computational Imaging and Computer Vision for skin texture applications.
+            
+            - Implemented advanced camera calibration and exposure settings for Linux-based imaging systems.
+        "
+        card-technology="
+        Python, OpenCV, PyTorch, Linux OS, 3D Imaging, Camera Calibration, Computer Vision
+        ">
+            <div class="card-content">
+                <h5 class="card-title">SkinScan CV</h5>
+                <p class="card-text">Enhanced 3D computational imaging system for skin texture analysis and camera calibration!</p>
+            </div>
+        </div>
+
+        <div class="project-card"  
+        card-description="
+            - Building GPT-2 by OpenAI from scratch using Python and PyTorch.
+
+            - Training a 10 million parameter Large Language Model and Transformer for GPT prompt engineering.
+    
+            - Implemented manual Backpropagation, WaveNet, Tokenization, Recurrent Neural Networks, Convolutional Layers, BatchNorm, LayerNorm, Bigram Model, and statistical loss methods.
+        "
+        card-technology="
+        Python, Jupyter, PyTorch, Numpy, Pandas, Graphviz
+        ">
+            <div class="card-content">
+                <h5 class="card-title">MicroGPT</h5>
+                <p class="card-text">Building GPT-2 by OpenAI and Large Language Models from scratch in Python!</p>
+            </div>
+        </div>
+
+        <div class="project-card"  
+        card-description="
+        - Implemented the Variational Quantum Eigensolver in Qiskit code to find the ground state Hamiltonian through quantum logic computations and a gradient descent optimizer.
+
+        - Deployed .NET C# unit testing and implemented with IBM cloud-based quantum computers.
+
+        - Awarded the Best Video Award for presentation at the MIT Lincoln Laboratory Beaver Works Summer Institute.
+        "
+        card-technology="
+        Python, Jupyter, Qiskit, Q#, C#, .NET, Git
+        ">
+            <div class="card-content">
+                <h5 class="card-title">Variational Quantum Eigensolver</h5>
+                <p class="card-text">Implemented the Variational Quantum Eigensolver using quantum logic computations and Gradient Descent optimizer!</p>
+            </div>
+        </div>
+
+        <div class="project-card"  
+        card-description="
+            - Created Personal Portfolio Website using Django framework to showcase past projects and highlight web development experience.
+            
+            - Integrated frontend and backend technologies, managed a PostgreSQL database, and implemented privacy-preserving practices. 
+
+            - Deployed the website using Railway and Cloudflare integration.
+        "
+        card-technology="
+        Python, Django, PostgreSQL, JavaScript, CSS, Bootstrap, HTML, Railway, Cloudflare, Git, SMTP
+        ">
+            <div class="card-content">
+                <h5 class="card-title">Portfolio Website</h5>
+                <p class="card-text">Used Django and web development tools to create the page you are viewing right now!</p>
+            </div>
+        </div>
+
+        <div class="project-card"  
+        card-description="
+            - Created an AI Connect-4 game using Arduino Uno that detects and responds to user piece drop.
+
+            - Connected MiniMax algorithm in C++ code to a physical connect four board with photoresistors, servo, and other electrical components.
+        "
+        card-technology="
+        Arduino, C++, Python, ESP32
+        ">
+            <div class="card-content">
+                <h5 class="card-title">AI Connect-4 Board</h5>
+                <p class="card-text">Created an AI Connect-4 game using Arduino Uno and the MiniMax AI algorithm!</p>
+            </div>
+        </div>
+
+        <div class="project-card"  
+        card-description="
+            - Created a Linux Command Line Interface game inspired by Photopia (Adam Cadre), an immersive digital literature piece.
+
+            - Worked with Linux local file and directory manipulation in a Kali Virtual Machine.
+        "
+        card-technology="
+        Linux, Bash, Kali VM, Command Line Interface
+        ">
+            <div class="card-content">
+                <h5 class="card-title">Linux Bash Command Line Game</h5>
+                <p class="card-text">Created a Interactive Game using only Linux packages, Command Line Interface, and Bash in a Kali VM!</p>
+            </div>
+        </div>
+        
+    </div>
+</section>
+
+<div id="projectModal" class="modal">
+    <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2 class ="modal-title" id="modal-title"></h2>
+        <p id="modal-description"></p>
+        <h3 class="card-technology-header"><br>Technology:</h3>
+        <p id="modal-technology"></p>
+    </div>
+</div>
+
+<script>
+    // Get the modal
+    var modal = document.getElementById("projectModal");
+
+    // Get the <span> element that closes the modal
+    var span = document.getElementsByClassName("close")[0];
+
+    // Get all the project cards
+    var cards = document.querySelectorAll('.project-card');
+
+    cards.forEach(card => {
+        card.addEventListener('click', function() {
+            // Set modal content
+            var title = this.querySelector('.card-title').innerText;
+            var description = this.getAttribute('card-description');
+            var technology = this.getAttribute('card-technology');
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-description').innerText = description;
+            document.getElementById('modal-technology').innerText = technology;
+
+            // Display the modal
+            modal.style.display = "block";
+        });
+    });
+
+    // When the user clicks on <span> (x), close the modal
+    span.onclick = function() {
+        modal.style.display = "none";
+    }
+
+    // When the user clicks anywhere outside of the modal, close it
+    window.onclick = function(event) {
+        if (event.target == modal) {
+            modal.style.display = "none";
+        }
+    }
+</script>
+
+<script>
+    // Function to toggle theme and save the preference
+    function toggleTheme() {
+        var element = document.body;
+        element.classList.toggle("dark-mode");
+
+        // Save the preference in localStorage
+        if (element.classList.contains("dark-mode")) {
+            localStorage.setItem("theme", "dark");
+        } else {
+            localStorage.setItem("theme", "light");
+        }
+    }
+
+    // On page load, check the saved theme and apply it
+    window.onload = function() {
+        var savedTheme = localStorage.getItem("theme");
+        if (savedTheme && savedTheme === "dark") {
+            document.body.classList.add("dark-mode");
+        }
+    };
+</script>
+
+    <!-- Include jQuery, Popper.js, and Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
